@@ -1,11 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
-import {TextField} from '@material-ui/core';
-import {useState} from 'react'
+import {TextField,Card} from '@material-ui/core';
+import {useState,useEffect} from 'react'
 import {Button} from '@material-ui/core'
-import firebase, { storage } from "../pages/firebase/firebase";
-
+import { storage } from "../config/firebase";
+import { useHistory } from 'react-router-dom';
+import {db} from '../config/firebase';
 
 
 const ShareText = () => {
@@ -39,33 +40,99 @@ const ShareText = () => {
 
     const classes = useStyles();
 
-    const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
-    const [file,setFile]=useState("")
-    
     const [name,setName]=useState("")
     const [address,setAddress]=useState("")
     const [explanation,setExplanation]=useState("")
+    const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
+    const [file,setFile] = useState(null)
+    const [url,setUrl]=useState(null)
+    
+    
+    const handleSubmit = (e) => {
+        // e.preventDefault();
+        db.collection('posts').add({
+            name: name,
+            addres: address,
+            explanation: explanation,
+        })
+        .then(() => {console.log('登録成功')
+        })
+        .catch(()=>{console.log('登録失敗')})
+    }
 
-    
-    
-    
+    useEffect(() => {
+        db.collection('posts')
+        .get()
+        .then((querySnapshot)=> {
+            console.log(
+                querySnapshot.docs.map((doc)=>({...doc.data(),id:doc.id}))
+        )
+    })
+    },[])
 
+
+
+
+    const handleImage = (e) =>  {
+    const url =createObjectURL(e.target.files[0]);
+        setUrl(url)
+        setFile(e.target.files[0])
+        console.log(e.target.files[0].name)
+    }
+    
+    const upload = ()=>{
+        console.log(file)
+
+        const uploadTask = storage.ref(`images/${file.name}`).put(file);
+        uploadTask.on(
+            "state_changed",
+            snapshot => {
+                console.log('snapshot', snapshot)
+            },
+            error => {
+                console.log(error)
+            },
+            ()=> {
+                storage
+                .ref("images")
+                .child(file.name)
+                .getDownloadURL()
+                .then(url=> {
+                    console.log(url)
+                });
+            }
+        )
+    }
+
+
+    console.log("file: ", file);
+    
+    const history = useHistory();
+    const handleLink = path => history.push(path);
+    
+    
+    
+    
     return (
-       
+        
         <form className={classes.shareForm} >
+            
 
         <h1 className={classes.shareTitle}>spot share</h1>
         <TextField  
+            name='name'
             label="スポット名" 
             value={name}
             onChange={(e) => setName(e.target.value)}
         />
         <TextField
+            name='address'
             label='住所'
             value={address}
             onChange={(e)=>setAddress(e.target.value)}
         />
         <TextField
+            name='explanation'
             label="説明"
             multiline
             rows={5}
@@ -79,10 +146,8 @@ const ShareText = () => {
                     className={classes.input}
                     id="icon-button-file"
                     type='file'
-                    onChange={e=>{const image_url =
-                        createObjectURL(e.target.files[0]);
-                        setFile(image_url)
-                    }}
+                    onChange={handleImage}
+                    name='image'
                     />
                 <label htmlFor="icon-button-file">
                     <IconButton
@@ -93,10 +158,11 @@ const ShareText = () => {
                     </IconButton>
                 </label>
                     <div id='preview'>画像を追加</div>
-                    <img className={classes.imgResize}  src={file}/>
+                    <img className={classes.imgResize}  src={url}/>
                  
                  <Button 
-                    
+                    type='submit'
+                    onClick={(e)=>{upload();handleSubmit();}}
                     variant="contained" 
                     color="primary" 
                     component="span"
@@ -104,8 +170,13 @@ const ShareText = () => {
                     UPLOAD
                 </Button>
             </div>
+            
+        
+        <button onClick={() => handleLink('../Page1')}>戻る</button>
+            
         
     </form>
+
         
     )
 }

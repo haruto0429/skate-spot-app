@@ -9,7 +9,7 @@ const LoggedInRoute = ({ component: Component, ...otherProps }) => {
     return (
         <Route
             {...otherProps} render={(props) =>
-                user ? <Component {...props} /> : <Redirect to='/' />
+                user ? <Component {...props} /> : <Redirect to='/Signin' />
             }
         />
 

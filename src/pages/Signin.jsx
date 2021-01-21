@@ -1,12 +1,16 @@
 import { TextField } from "@material-ui/core";
 import { useState } from 'react';
 import { auth } from '../config/firebase';
-
+import { AuthContext } from '../context/AuthContext'
+import { useContext } from 'react';
+import { Redirect } from 'react-router-dom';
+import {Link} from 'react-router-dom'
 
 const Signin = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const user = useContext(AuthContext)
 
 
     const handleSubmit = (e) => {
@@ -22,6 +26,10 @@ const Signin = () => {
                 console.log('ユーザー作成失敗', error);
             });
     };
+
+    if (user) {
+        return <Redirect to='/area' />
+    }
 
     return (
         <form onSubmit={handleSubmit}>
@@ -40,6 +48,7 @@ const Signin = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 label='パスワード' />
             <button type='submit'>登録</button>
+            <Link to='/Login'>アカウントをお持ちの方はコチラ</Link>
         </form>
 
     )
