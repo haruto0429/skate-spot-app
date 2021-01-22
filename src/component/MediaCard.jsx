@@ -4,7 +4,9 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-
+import IconButton from '@material-ui/core/IconButton';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import {useState} from 'react'
 
 
 const useStyles = makeStyles({
@@ -16,14 +18,25 @@ const useStyles = makeStyles({
 
 const MediaCard = (props) => {
     const classes = useStyles();
-    // const {name,address,explanation,url}=props;
+    const [favorite,setFavorite] = useState({ count: 0, clicked: false});
+
+        // いいねボタン
+       const FavoriteButton = () => {
+           setFavorite({
+               count: favorite.count + (favorite.clicked ? -1 : 1),
+               clicked: !favorite.clicked            
+           })
+       }
+    
+    
+
     return (
         
         <Card className={classes.root}>
             <CardActionArea>
                 <CardMedia 
                     component='img'
-                    image={props.file}/>
+                    image={props.images}/>
                 <CardContent>
                     <Typography gutterBottom variant="h4" component="h2">
                           {props.name}
@@ -36,6 +49,12 @@ const MediaCard = (props) => {
                         
                     </Typography>
                 </CardContent>
+
+
+                <IconButton  aria-label="add to favorites">
+                    <FavoriteIcon onClick={FavoriteButton} />
+                </IconButton>
+                {favorite.count}
             </CardActionArea>
         </Card>
             
