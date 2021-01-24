@@ -27,9 +27,16 @@ const ShareText = () => {
         height: '350px',
         width: '250px',
         margin: '0 auto',
+        
+        },
+        back: {
+            backgroundColor:'#CCFF99',
+            height: '100vh',
         },
         shareTitle: {
             textAlign:'center',
+            fontFamily: 'Impact',
+            color: 'green',
         },
         imgResize:{
             height: '150px',
@@ -114,7 +121,8 @@ const ShareText = () => {
     
     
     return (
-        
+        <div className={classes.back}>
+
         <form className={classes.shareForm} >
             
 
@@ -124,13 +132,13 @@ const ShareText = () => {
             label="スポット名" 
             value={name}
             onChange={(e) => setName(e.target.value)}
-        />
+            />
         <TextField
             name='address'
             label='住所'
             value={address}
             onChange={(e)=>setAddress(e.target.value)}
-        />
+            />
         <TextField
             name='explanation'
             label="説明"
@@ -138,7 +146,7 @@ const ShareText = () => {
             rows={5}
             value={explanation}
             onChange={(e)=>setExplanation(e.target.value)}
-        />
+            />
 
 
             <div className={classes.root}>
@@ -176,6 +184,7 @@ const ShareText = () => {
             
         
     </form>
+        </div>
 
         
     )

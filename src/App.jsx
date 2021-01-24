@@ -10,7 +10,6 @@ import Login from './pages/Login';
 import Share from './pages/Share';
 
 
-
 import AuthProvider from './context/AuthContext'
 import LoggedInRoute from './component/LoggedInRoute'
 
