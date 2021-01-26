@@ -6,7 +6,7 @@ import {Button} from '@material-ui/core'
 import image from '../img/jenny-hill-bzGL7ci_lvc-unsplash.jpg'
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
     title: {
         color: 'green',
         fontSize: '3rem',
@@ -16,12 +16,11 @@ const useStyles = makeStyles({
     AreaChoice: {
         margin: '0 auto',
         textAlign: 'center',
-        backgroundImage : `url(${image})`,
-        minHeight: '100vh',
-        backgroundSize:'cover',
-        
-        
-        
+        // backgroundImage : `url(${image})`,
+        // minHeight: '100vh',
+        // backgroundSize:'cover',
+        backgroundColor: 'black',
+        height: '100vh', 
         
     },
     linkList: {
@@ -29,18 +28,27 @@ const useStyles = makeStyles({
         justifyContent: 'space-between',
         flexDirection: 'column',
         
+        
 
     },
     logoutButton: {
-        width: '25%',
         margin: '0 auto',
-        width: '12%',  
+        width: '12%', 
+        [theme.breakpoints.down('sm')]:{
+            width:'30%',
+            margin: '10% auto',
+        }
     },
     page: {
         marginBottom : '3%',
         fontSize: '1.5rem',
+        [theme.breakpoints.down('sm')]:{
+         marginTop: '5%'   
+            
+        }
+        
     }
-});
+}));
 
 const Area = () => {
 

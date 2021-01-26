@@ -42,6 +42,10 @@ const ShareText = () => {
             height: '150px',
             width:  '150px',
             backgroundColor: 'gray',
+        },
+        backButton:{
+            marginTop: '8%',
+
         }
     }));
 
@@ -53,6 +57,7 @@ const ShareText = () => {
     const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
     const [file,setFile] = useState(null)
     const [url,setUrl]=useState(null)
+    
     
     
     const handleSubmit = (e) => {
@@ -115,7 +120,7 @@ const ShareText = () => {
     console.log("file: ", file);
     
     const history = useHistory();
-    const handleLink = path => history.push(path);
+    const handleLink = path => history.goBack(path);
     
     
     
@@ -180,7 +185,13 @@ const ShareText = () => {
             </div>
             
         
-        <button onClick={() => handleLink('../Page1')}>戻る</button>
+        <Button className={classes.backButton}
+        onClick={() => handleLink()}
+        variant="outlined"
+        color="primary"
+        >
+            戻る
+        </Button>
             
         
     </form>

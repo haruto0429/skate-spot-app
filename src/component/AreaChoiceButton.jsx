@@ -1,13 +1,13 @@
 import { useHistory } from 'react-router-dom';
 import {} from '@material-ui/core'
 
-const Post = () => {
+const AreaChoiceButton = () => {
     const history = useHistory();
     const handleLink = path => history.push(path);
     return(
         
-        <button onClick={() => handleLink('../share')}>投稿</button>
+        <button onClick={() => handleLink('../area')}>エリア選択</button>
     )
 }
 
-export default Post
+export default AreaChoiceButton

@@ -6,12 +6,18 @@ import image from '../img/jan-kopriva-oK2OoXCpOB4-unsplash.jpg'
 const Top = () => {
     const history = useHistory();
     const handleLink = path => history.push(path);
-    const useStyles = makeStyles({
+    const useStyles = makeStyles(theme => ({
 
         topAll:{
             backgroundImage : `url(${image})`,
             minHeight: '100vh',
             backgroundSize:'cover',
+            [theme.breakpoints.down('sm')]:{
+                minHeight: '100vh',
+                width:'100%',
+                backgroundSize:'cover',
+                backgroundPosition: 'center'
+            }
             
 
         },
@@ -23,39 +29,73 @@ const Top = () => {
             height: '350px',
             width: '100vh',
             margin: '0 auto',
+            [theme.breakpoints.down('sm')]:{
+                width: '100%'
+            }
             
             },
         topTitle:{
             textAlign:'center',
             fontSize :'5rem',
             fontFamily: 'Impact',
+            [theme.breakpoints.down('sm')]:{
+                fontSize: '4rem'
+            }
         },
         topSubTitle:{
             textAlign:'center',
             fontFamily: 'Impact',
             fontSize: '2rem',
+            [theme.breakpoints.down('sm')]:{
+                marginBottom: '15%',
+            }
         },
         signinLogin:{
             textAlign:'center',
             marginBottom: '5%',
+            [theme.breakpoints.down('sm')]:{
+                marginBottom: '10%',
+            }
             
         },
         signinButton:{
             marginRight:'1%',
             width :'12%',
             height: '120%',
+            [theme.breakpoints.down('sm')]:{
+                marginRight:'5%',
+                width :'20%',
+                height: '130%',
+            }
         
         },
         loginButton:{
             width: '12%',
             height: '120%',
+            [theme.breakpoints.down('sm')]:{
+                width: '20%',
+            height: '130%',
+            }
         },
         gestButton:{
             width: '20%',
             height: '15%',
             margin:'0 auto',
+            [theme.breakpoints.down('sm')]:{
+                width: '35%',
+            }
+        },
+        caution: {
+            textAlign:'center',
+            color: 'orange',
+            fontSize: '1.3rem',
+            marginTop: '15%',
+            [theme.breakpoints.down('sm')]:{
+                fontSize: '0.8rem',
+            }
+             
         }
-    })
+    }))
     const classes = useStyles();
     
     return (
@@ -91,8 +131,12 @@ const Top = () => {
                     ログインなしで始める
             </Button>
 
+            <div className={classes.caution}>
+            <p>※「ログインなしで始める」は投稿の閲覧機能のみです</p>
+            <p>投稿機能のを利用する場合はログインページにて<br/>メールアドレス：test＠gmail.com　パスワード：123456</p>
+
             </div>
-            
+            </div>
         </div>
 
 

@@ -1,6 +1,7 @@
 import Post from '../component/Post'
 import MediaCard from '../component/MediaCard'
 import {makeStyles} from '@material-ui/core/styles'
+import AreaChoiceButton from '../component/AreaChoiceButton'
 
 
 
@@ -36,6 +37,7 @@ const Page1 = () => {
                 
                 />
             <Post />
+            <AreaChoiceButton />
         </>
     )
 }
