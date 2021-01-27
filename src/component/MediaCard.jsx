@@ -11,8 +11,23 @@ import {useState} from 'react'
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    width: '300px',
+    height: '100%',
+    marginLeft:'40px',
+    marginTop: '20px',
+    
+    
   },
+  cardMedia: {
+      width: '100%',
+      height: '200px',
+      
+  },
+  cardContent: {
+      width: '100%',
+      
+  },
+  
 });
 
 
@@ -33,19 +48,19 @@ const MediaCard = (props) => {
     return (
         
         <Card className={classes.root}>
-            <CardActionArea>
-                <CardMedia 
+            <CardActionArea >
+                <CardMedia className={classes.cardMedia}
                     component='img'
-                    image={props.images}/>
-                <CardContent>
+                    image={props.image}/>
+                <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h4" component="h2">
                           {props.name}
                     </Typography>
                     <Typography gutterBottom variant="h5" component="h4">
                          {props.address}
                     </Typography>
-                        {props.explanation}
                     <Typography variant="body2" color="textSecondary" component="p">
+                        {props.explanation}
                         
                     </Typography>
                 </CardContent>

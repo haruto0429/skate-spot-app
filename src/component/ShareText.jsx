@@ -52,7 +52,7 @@ const ShareText = () => {
     const classes = useStyles();
 
     const [name,setName]=useState("")
-    const [address,setAddress]=useState("")
+    const [addres,setAddres]=useState("")
     const [explanation,setExplanation]=useState("")
     const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
     const [file,setFile] = useState(null)
@@ -60,17 +60,17 @@ const ShareText = () => {
     
     
     
-    const handleSubmit = (e) => {
-        // e.preventDefault();
-        db.collection('posts').add({
-            name: name,
-            addres: address,
-            explanation: explanation,
-        })
-        .then(() => {console.log('登録成功')
-        })
-        .catch(()=>{console.log('登録失敗')})
-    }
+    // const handleSubmit = () => {
+    //     // e.preventDefault();
+    //     db.collection('posts').add({
+    //         name: name,
+    //         addres: address,
+    //         explanation: explanation,
+    //     })
+    //     .then(() => {console.log('登録成功')
+    //     })
+    //     .catch(()=>{console.log('登録失敗')})
+    // }
 
     useEffect(() => {
         db.collection('posts')
@@ -110,7 +110,17 @@ const ShareText = () => {
                 .child(file.name)
                 .getDownloadURL()
                 .then(url=> {
-                    console.log(url)
+                    console.log(url);
+        db.collection('posts')
+        .add({
+            name: name,
+            addres: addres,
+            explanation: explanation,
+            image: url
+        })
+        .then(() => {console.log('登録成功')
+        })
+        .catch(()=>{console.log('登録失敗')})
                 });
             }
         )
@@ -141,8 +151,8 @@ const ShareText = () => {
         <TextField
             name='address'
             label='住所'
-            value={address}
-            onChange={(e)=>setAddress(e.target.value)}
+            value={addres}
+            onChange={(e)=>setAddres(e.target.value)}
             />
         <TextField
             name='explanation'
@@ -175,7 +185,10 @@ const ShareText = () => {
                  
                  <Button 
                     type='submit'
-                    onClick={(e)=>{upload();handleSubmit();}}
+                    onClick={()=>{
+                        upload();
+                        // handleSubmit();
+                    }}
                     variant="contained" 
                     color="primary" 
                     component="span"
