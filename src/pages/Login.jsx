@@ -52,7 +52,7 @@ const Login = () => {
     }
 
     if (user) {
-        return <Redirect to='/area' />
+        return <Redirect to='/page1' />
     }
 
     return (

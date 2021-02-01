@@ -78,7 +78,7 @@ const Top = () => {
             }
         },
         gestButton:{
-            width: '20%',
+            width: '17%',
             height: '15%',
             margin:'0 auto',
             [theme.breakpoints.down('sm')]:{
@@ -125,7 +125,7 @@ const Top = () => {
             </div>
 
             <Button className={classes.gestButton} 
-                    onClick={() => handleLink('./area')}
+                    onClick={() => handleLink('./page1')}
                     variant="contained" 
                     >
                     ログインなしで始める

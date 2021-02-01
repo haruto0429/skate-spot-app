@@ -1,7 +1,7 @@
 
 import { BrowserRouter, Switch, Route,  } from 'react-router-dom'
 import React from 'react';
-import Area from './pages/Area';
+// import Area from './pages/Area';
 import Top from './pages/Top';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
@@ -22,7 +22,7 @@ const App = () => {
                         <Route exact path='/' component={Top} />
                         <Route exact path='/Signin' component={Signin} />
                         <Route exact path='/Login' component={Login} />
-                        <Route exact path='/area' component={Area} />
+                        {/* <Route exact path='/area' component={Area} /> */}
                         <Route exact path='/Page1' component={Page1} />
                         <Route exact path='/Page2' component={Page2} />
                         <LoggedInRoute exact path='/Share' component={Share} />

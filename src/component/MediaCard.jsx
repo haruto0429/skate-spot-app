@@ -9,13 +9,13 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import {useState} from 'react'
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme=>({
   root: {
     width: '300px',
-    height: '100%',
     marginLeft:'40px',
-    marginTop: '20px',
-    
+    marginTop: '50px',
+    marginBottom: '15%',
+    position: 'relative',
     
   },
   cardMedia: {
@@ -24,16 +24,43 @@ const useStyles = makeStyles({
       
   },
   cardContent: {
-      width: '100%',
+      height: '270px',
       
   },
+  favorite:{
+    position: 'absolute',
+    bottom: '0',
+    left: '5%',
+    
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    marginLeft: 'auto',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  More:{
+    position: 'absolute',
+    bottom: '0',
+    left: '100px',
+    transform: 'rotate(180deg)',
+  }
   
-});
+  
+  
+}));
+
 
 
 const MediaCard = (props) => {
     const classes = useStyles();
     const [favorite,setFavorite] = useState({ count: 0, clicked: false});
+    
+
 
         // いいねボタン
        const FavoriteButton = () => {
@@ -42,13 +69,15 @@ const MediaCard = (props) => {
                clicked: !favorite.clicked            
            })
        }
+
+       
     
     
 
     return (
         
         <Card className={classes.root}>
-            <CardActionArea >
+            <CardActionArea className={classes.action}>
                 <CardMedia className={classes.cardMedia}
                     component='img'
                     image={props.image}/>
@@ -56,8 +85,8 @@ const MediaCard = (props) => {
                     <Typography gutterBottom variant="h4" component="h2">
                           {props.name}
                     </Typography>
-                    <Typography gutterBottom variant="h5" component="h4">
-                         {props.address}
+                    <Typography gutterBottom  component="h4">
+                        〒{props.address}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         {props.explanation}
@@ -65,11 +94,18 @@ const MediaCard = (props) => {
                     </Typography>
                 </CardContent>
 
+                <div className={classes.favorite}>
 
-                <IconButton  aria-label="add to favorites">
-                    <FavoriteIcon onClick={FavoriteButton} />
+                <IconButton aria-label="add to favorites">
+                     <FavoriteIcon 　onClick={FavoriteButton} />
                 </IconButton>
                 {favorite.count}
+
+                
+                </div>
+                
+                
+                
             </CardActionArea>
         </Card>
             

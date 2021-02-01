@@ -5,13 +5,15 @@ import { auth } from '../config/firebase'
 import {Button} from '@material-ui/core'
 import image from '../img/jenny-hill-bzGL7ci_lvc-unsplash.jpg'
 
-
 const useStyles = makeStyles(theme=>({
     title: {
         color: 'green',
-        fontSize: '3rem',
+        fontSize: '2.5rem',
         margin: '0',
-        paddingTop: '2%',
+        paddingTop: '8%',
+         [theme.breakpoints.down('sm')]:{
+            paddingTop: '80px',
+        }
     },
     AreaChoice: {
         margin: '0 auto',
@@ -19,7 +21,7 @@ const useStyles = makeStyles(theme=>({
         // backgroundImage : `url(${image})`,
         // minHeight: '100vh',
         // backgroundSize:'cover',
-        backgroundColor: 'black',
+        // backgroundColor: 'black',
         height: '100vh', 
         
     },
@@ -57,6 +59,8 @@ const Area = () => {
     }
     const classes = useStyles();
     return (
+        <>
+           
         <div className={classes.AreaChoice}>
             <h1 className={classes.title}>エリア選択</h1>
 
@@ -79,6 +83,7 @@ const Area = () => {
                 ログアウト
             </Button>
         </div>
+       </> 
     )
 }
 

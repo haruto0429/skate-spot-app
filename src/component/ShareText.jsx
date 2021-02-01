@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom';
 import {db} from '../config/firebase';
 
 
+
 const ShareText = () => {
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -30,7 +31,7 @@ const ShareText = () => {
         
         },
         back: {
-            backgroundColor:'#CCFF99',
+            // backgroundColor:'#CCFF99',
             height: '100vh',
         },
         shareTitle: {
@@ -60,17 +61,6 @@ const ShareText = () => {
     
     
     
-    // const handleSubmit = () => {
-    //     // e.preventDefault();
-    //     db.collection('posts').add({
-    //         name: name,
-    //         addres: address,
-    //         explanation: explanation,
-    //     })
-    //     .then(() => {console.log('登録成功')
-    //     })
-    //     .catch(()=>{console.log('登録失敗')})
-    // }
 
     useEffect(() => {
         db.collection('posts')
@@ -82,9 +72,8 @@ const ShareText = () => {
     })
     },[])
 
-
-
-
+    
+// 画像プレビュー
     const handleImage = (e) =>  {
     const url =createObjectURL(e.target.files[0]);
         setUrl(url)
@@ -92,8 +81,9 @@ const ShareText = () => {
         console.log(e.target.files[0].name)
     }
     
+    // 画像、テキストをfirestoreに格納
     const upload = ()=>{
-        console.log(file)
+        
 
         const uploadTask = storage.ref(`images/${file.name}`).put(file);
         uploadTask.on(
@@ -118,9 +108,9 @@ const ShareText = () => {
             explanation: explanation,
             image: url
         })
-        .then(() => {console.log('登録成功')
+        .then(() => {handleLink('./page1')
         })
-        .catch(()=>{console.log('登録失敗')})
+        .catch(()=>{alert("入力していない項目があります")})
                 });
             }
         )
@@ -187,7 +177,7 @@ const ShareText = () => {
                     type='submit'
                     onClick={()=>{
                         upload();
-                        // handleSubmit();
+                        
                     }}
                     variant="contained" 
                     color="primary" 
@@ -203,7 +193,7 @@ const ShareText = () => {
         variant="outlined"
         color="primary"
         >
-            戻る
+            投稿一覧へ
         </Button>
             
         
