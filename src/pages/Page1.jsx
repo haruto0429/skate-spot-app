@@ -10,8 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
-
-
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { auth } from '../config/firebase'
 
 
 
@@ -121,16 +121,21 @@ const Page1 = () => {
     const handleLink = path => history.push(path);
     const [posts,setPosts]=useState([]);
     const [value,setValue]=useState('');
-
+    const logout = () => {
+        auth.signOut();
+    }
     
      const handleSerchChanges = (e) => {
       setValue(e.target.value)
     }
 
     
+  
+    
+    
     useEffect(() => {
 
-      db.collection('posts').onSnapshot(((querySnapshot) => {
+      db.collection('posts').orderBy('createAt') .onSnapshot(((querySnapshot) => {
         setPosts(
           querySnapshot.docs.map((doc)=>({...doc.data(),id:doc.id}))
           )
@@ -206,10 +211,13 @@ const Page1 = () => {
                 posts.map((post) => (
                     <div>
                         <MediaCard 
+                            user={post.username}
+                            key={post.id}
                             image={post.image}
                             name={post.name} 
                             address={post.addres} 
-                            explanation={post.explanation} />
+                            explanation={post.explanation} 
+                            />
                     </div>
                 ))}
 
@@ -229,6 +237,15 @@ const Page1 = () => {
             >
             +
         </Button>
+
+          <Button 
+            onClick={logout}
+            variant="contained"
+            color="default"
+            startIcon={<ExitToAppIcon />}
+          >
+            LOGOUT
+          </Button>
 
             </Toolbar>
                 </AppBar>

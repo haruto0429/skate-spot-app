@@ -7,7 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import {useState} from 'react'
-
+import CardHeader from '@material-ui/core/CardHeader';
+import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles(theme=>({
   root: {
@@ -76,8 +77,17 @@ const MediaCard = (props) => {
 
     return (
         
-        <Card className={classes.root}>
+        <Card className={classes.root} >
             <CardActionArea className={classes.action}>
+               <CardHeader
+                avatar={
+                  <Avatar aria-label="recipe" className={classes.avatar}>
+                  
+                </Avatar>
+                }
+                title={props.user}
+                subheader={props.createAt}
+                />
                 <CardMedia className={classes.cardMedia}
                     component='img'
                     image={props.image}/>

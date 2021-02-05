@@ -2,11 +2,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import {TextField,} from '@material-ui/core';
-import {useState,useEffect} from 'react'
+import {useState,useEffect, useContext} from 'react'
 import {Button} from '@material-ui/core'
 import { storage } from "../config/firebase";
 import { useHistory } from 'react-router-dom';
 import {db} from '../config/firebase';
+import { AuthContext } from '../context/AuthContext';
 
 
 
@@ -55,6 +56,7 @@ const ShareText = () => {
     const [name,setName]=useState("")
     const [addres,setAddres]=useState("")
     const [explanation,setExplanation]=useState("")
+    const user = useContext(AuthContext)
     const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
     const [file,setFile] = useState(null)
     const [url,setUrl]=useState(null)
@@ -68,23 +70,23 @@ const ShareText = () => {
         .then((querySnapshot)=> {
             console.log(
                 querySnapshot.docs.map((doc)=>({...doc.data(),id:doc.id}))
-        )
-    })
-    },[])
-
-    
-// 画像プレビュー
-    const handleImage = (e) =>  {
-    const url =createObjectURL(e.target.files[0]);
-        setUrl(url)
-        setFile(e.target.files[0])
-        console.log(e.target.files[0].name)
-    }
-    
-    // 画像、テキストをfirestoreに格納
-    const upload = ()=>{
+                )
+            })
+        },[])
         
-
+        
+        // 画像プレビュー
+        const handleImage = (e) =>  {
+            const url =createObjectURL(e.target.files[0]);
+            setUrl(url)
+            setFile(e.target.files[0])
+            console.log(e.target.files[0].name)
+        }
+        
+        
+        // 画像、テキストをfirestoreに格納
+        const upload = ()=>{
+            
         const uploadTask = storage.ref(`images/${file.name}`).put(file);
         uploadTask.on(
             "state_changed",
@@ -101,23 +103,25 @@ const ShareText = () => {
                 .getDownloadURL()
                 .then(url=> {
                     console.log(url);
-        db.collection('posts')
-        .add({
-            name: name,
-            addres: addres,
-            explanation: explanation,
-            image: url
-        })
-        .then(() => {handleLink('./page1')
-        })
-        .catch(()=>{alert("入力していない項目があります")})
+                    db.collection('posts')
+                    .add({
+                        name: name,
+                        addres: addres,
+                        explanation: explanation,
+                        image: url,
+                        createAt: new Date(),
+                        username:user.displayName,
+                    })
+                    .then(() => {handleLink('./page1')
+                })
+                .catch(()=>{alert("入力していない項目があります")})
                 });
             }
         )
     }
 
 
-    console.log("file: ", file);
+    
     
     const history = useHistory();
     const handleLink = path => history.goBack(path);
