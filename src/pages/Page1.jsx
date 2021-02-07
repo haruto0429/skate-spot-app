@@ -39,7 +39,7 @@ const Page1 = () => {
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginLeft: '0',
+    marginLeft: '10%',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(1),

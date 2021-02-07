@@ -29,25 +29,46 @@ const ShareText = () => {
         height: '350px',
         width: '250px',
         margin: '0 auto',
-        
+        [theme.breakpoints.down('sm')]:{
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexDirection: 'column',
+            height: '350px',
+            width: '250px',
+            margin: '0 auto',
+            }
         },
         back: {
-            // backgroundColor:'#CCFF99',
             height: '100vh',
         },
         shareTitle: {
             textAlign:'center',
             fontFamily: 'Impact',
             color: 'green',
+            [theme.breakpoints.down('sm')]:{
+                textAlign:'center',
+                fontFamily: 'Impact',
+                color: 'green',
+            }
         },
         imgResize:{
             height: '150px',
             width:  '150px',
             backgroundColor: 'gray',
+            [theme.breakpoints.down('sm')]:{
+                height: '150px',
+                width:  '150px',
+                backgroundColor: 'gray',
+            }
+        
         },
         backButton:{
             marginTop: '8%',
-
+            [theme.breakpoints.down('sm')]:{
+                marginTop: '8%',
+                height: '100%',
+                width: '100%',
+            }
         }
     }));
 
@@ -87,7 +108,7 @@ const ShareText = () => {
         // 画像、テキストをfirestoreに格納
         const upload = ()=>{
             
-        const uploadTask = storage.ref(`images/${file.name}`).put(file);
+        const uploadTask = storage.ref(`images/${file?.name}`).put(file);
         uploadTask.on(
             "state_changed",
             snapshot => {
@@ -114,7 +135,7 @@ const ShareText = () => {
                     })
                     .then(() => {handleLink('./page1')
                 })
-                .catch(()=>{alert("入力していない項目があります")})
+                .catch(()=>{console.log('error')})
                 });
             }
         )
@@ -136,19 +157,19 @@ const ShareText = () => {
             
 
         <h1 className={classes.shareTitle}>spot share</h1>
-        <TextField  
+        <TextField  className={classes.nameFiled}
             name='name'
             label="スポット名" 
             value={name}
             onChange={(e) => setName(e.target.value)}
             />
-        <TextField
+        <TextField className={classes.addressFiled}
             name='address'
             label='住所'
             value={addres}
             onChange={(e)=>setAddres(e.target.value)}
             />
-        <TextField
+        <TextField className={classes.explanationFiled}
             name='explanation'
             label="説明"
             multiline

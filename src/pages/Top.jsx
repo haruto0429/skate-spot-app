@@ -82,6 +82,7 @@ const Top = () => {
             height: '15%',
             margin:'0 auto',
             [theme.breakpoints.down('sm')]:{
+                height: '15%',
                 width: '35%',
             }
         },
