@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme=>({
     width: '300px',
     marginLeft:'40px',
     marginTop: '50px',
-    marginBottom: '5%',
+    marginBottom: '15%',
     position: 'relative',
     
   },
