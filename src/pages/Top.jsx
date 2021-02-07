@@ -74,15 +74,15 @@ const Top = () => {
             height: '120%',
             [theme.breakpoints.down('sm')]:{
                 width: '20%',
-            height: '130%',
+                height: '130%',
             }
         },
         gestButton:{
             width: '17%',
-            height: '15%',
+            height: '50px',
             margin:'0 auto',
             [theme.breakpoints.down('sm')]:{
-                height: '50px',
+                height: '100px',
                 width: '35%',
                 marginTop: '10%'
             }

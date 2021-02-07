@@ -66,21 +66,21 @@ const ShareText = () => {
             marginTop: '8%',
             [theme.breakpoints.down('sm')]:{
                 marginTop: '8%',
-                height: '40px',
+                height: '100px',
                 width: '250px',
             }
         },
         nameFiled: {
             width: '100%',
-            height:'100%',
+            height:'100px',
         },
         addressFiled: {
             width: '100%',
-            height:'100%',
+            height:'100px',
         },
         explanationFiled: {
             width: '100%',
-            height:'100%',
+            height:'200px',
         }
     }));
 
