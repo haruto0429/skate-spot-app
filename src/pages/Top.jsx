@@ -82,7 +82,7 @@ const Top = () => {
             height: '15%',
             margin:'0 auto',
             [theme.breakpoints.down('sm')]:{
-                height: '15%',
+                height: '50px',
                 width: '35%',
                 marginTop: '10%'
             }
@@ -128,7 +128,6 @@ const Top = () => {
 
             <Button className={classes.gestButton} 
                     onClick={() => handleLink('./page1')}
-                    size="medium"
                     variant="contained" 
                     color="default"
                     >

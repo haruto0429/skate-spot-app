@@ -33,7 +33,7 @@ const ShareText = () => {
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'column',
-            height: '350px',
+            height: '500px',
             width: '250px',
             margin: '0 auto',
             }
