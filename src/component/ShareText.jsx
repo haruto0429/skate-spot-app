@@ -33,7 +33,7 @@ const ShareText = () => {
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'column',
-            height: '500px',
+            height: '100vh',
             width: '250px',
             margin: '0 auto',
             }
@@ -66,21 +66,21 @@ const ShareText = () => {
             marginTop: '8%',
             [theme.breakpoints.down('sm')]:{
                 marginTop: '8%',
-                height: '100px',
+                height: '20%',
                 width: '250px',
             }
         },
         nameFiled: {
             width: '100%',
-            height:'100px',
+            height:'50%',
         },
         addressFiled: {
             width: '100%',
-            height:'100px',
+            height:'50%',
         },
         explanationFiled: {
             width: '100%',
-            height:'200px',
+            height:'50%',
         }
     }));
 

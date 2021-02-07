@@ -26,7 +26,7 @@ const Top = () => {
             display: 'flex',
             justifyContent: 'space-between',
             flexDirection: 'column',
-            height: '350px',
+            height: '100vh',
             width: '100vh',
             margin: '0 auto',
             [theme.breakpoints.down('sm')]:{
@@ -47,7 +47,8 @@ const Top = () => {
             fontFamily: 'Impact',
             fontSize: '2rem',
             [theme.breakpoints.down('sm')]:{
-                marginBottom: '15%',
+                marginBottom: '0%',
+                color: 'green',
             }
         },
         signinLogin:{
@@ -82,9 +83,9 @@ const Top = () => {
             height: '50px',
             margin:'0 auto',
             [theme.breakpoints.down('sm')]:{
-                height: '100px',
+                height: '50px',
                 width: '35%',
-                marginTop: '10%'
+                marginTop: '0%'
             }
         },
         caution: {
