@@ -10,8 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import { auth } from '../config/firebase'
+import MenuButton from '../component/MenuButton';
 
 
 
@@ -101,7 +100,7 @@ const Page1 = () => {
             [theme.breakpoints.down('sm')]:{
                 position: 'fixed',
                 bottom: '3%',
-                left: '43%',
+                left: '42%',
                 right: '50%',
             }
         },
@@ -110,6 +109,14 @@ const Page1 = () => {
             top: 'auto',
             bottom: '0',
           
+        },
+        login: {
+          width: '12%',
+          marginLeft :'auto',
+          [theme.breakpoints.down('sm')]:{
+                width: '35%',
+                marginLeft :'auto',
+            }
         }
         
         
@@ -121,9 +128,9 @@ const Page1 = () => {
     const handleLink = path => history.push(path);
     const [posts,setPosts]=useState([]);
     const [value,setValue]=useState('');
-    const logout = () => {
-        auth.signOut();
-    }
+    
+
+    
     
      const handleSerchChanges = (e) => {
       setValue(e.target.value)
@@ -135,7 +142,7 @@ const Page1 = () => {
     
     useEffect(() => {
 
-      db.collection('posts').orderBy('createAt') .onSnapshot(((querySnapshot) => {
+      db.collection('posts').orderBy('createAt').onSnapshot(((querySnapshot) => {
         setPosts(
           querySnapshot.docs.map((doc)=>({...doc.data(),id:doc.id}))
           )
@@ -205,14 +212,13 @@ const Page1 = () => {
     </div>
             
             <section className={classes.wrap}>
-                <div className={classes.row}>
+                <div className={classes.row}　>
               {/* 取得したコレクションをカード形式で表示 */}
             {posts &&
                 posts.map((post) => (
-                    <div>
+                    <div key={post.id}>
                         <MediaCard 
                             user={post.username}
-                            key={post.id}
                             image={post.image}
                             name={post.name} 
                             address={post.addres} 
@@ -238,14 +244,9 @@ const Page1 = () => {
             +
         </Button>
 
-          <Button 
-            onClick={logout}
-            variant="contained"
-            color="default"
-            startIcon={<ExitToAppIcon />}
-          >
-            LOGOUT
-          </Button>
+        <MenuButton />
+
+          
 
             </Toolbar>
                 </AppBar>

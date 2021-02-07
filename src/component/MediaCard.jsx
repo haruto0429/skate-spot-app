@@ -10,12 +10,13 @@ import {useState} from 'react'
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
 
+
 const useStyles = makeStyles(theme=>({
   root: {
     width: '300px',
     marginLeft:'40px',
     marginTop: '50px',
-    marginBottom: '15%',
+    marginBottom: '5%',
     position: 'relative',
     
   },
@@ -104,19 +105,17 @@ const MediaCard = (props) => {
                     </Typography>
                 </CardContent>
 
+            </CardActionArea>
                 <div className={classes.favorite}>
 
-                <IconButton aria-label="add to favorites">
-                     <FavoriteIcon 　onClick={FavoriteButton} />
+                <IconButton 
+                  aria-label="add to favorites" 
+                  onClick={FavoriteButton}>
+                     <FavoriteIcon 　 />
                 </IconButton>
                 {favorite.count}
-
                 
                 </div>
-                
-                
-                
-            </CardActionArea>
         </Card>
             
             
