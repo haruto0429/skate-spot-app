@@ -44,7 +44,7 @@ const ShareText = () => {
         shareTitle: {
             textAlign:'center',
             fontFamily: 'Impact',
-            color: 'green',
+            color: 'black',
             [theme.breakpoints.down('sm')]:{
                 textAlign:'center',
                 fontFamily: 'Impact',
