@@ -54,7 +54,7 @@ const Top = () => {
             textAlign:'center',
             marginBottom: '5%',
             [theme.breakpoints.down('sm')]:{
-                marginBottom: '10%',
+                marginBottom: '0%',
             }
             
         },
@@ -84,6 +84,7 @@ const Top = () => {
             [theme.breakpoints.down('sm')]:{
                 height: '15%',
                 width: '35%',
+                marginTop: '10%'
             }
         },
         caution: {
@@ -127,7 +128,9 @@ const Top = () => {
 
             <Button className={classes.gestButton} 
                     onClick={() => handleLink('./page1')}
+                    size="medium"
                     variant="contained" 
+                    color="default"
                     >
                     ログインなしで始める
             </Button>

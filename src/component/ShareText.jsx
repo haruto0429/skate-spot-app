@@ -48,7 +48,7 @@ const ShareText = () => {
             [theme.breakpoints.down('sm')]:{
                 textAlign:'center',
                 fontFamily: 'Impact',
-                color: 'green',
+                color: 'black',
             }
         },
         imgResize:{
@@ -66,9 +66,21 @@ const ShareText = () => {
             marginTop: '8%',
             [theme.breakpoints.down('sm')]:{
                 marginTop: '8%',
-                height: '100%',
-                width: '100%',
+                height: '40px',
+                width: '250px',
             }
+        },
+        nameFiled: {
+            width: '100%',
+            height:'100%',
+        },
+        addressFiled: {
+            width: '100%',
+            height:'100%',
+        },
+        explanationFiled: {
+            width: '100%',
+            height:'100%',
         }
     }));
 
