@@ -45,7 +45,8 @@
  
 Requirementで列挙したライブラリなどのインストール方法を説明する
  ```bash
-
+ node.jsをインストール
+https://nodejs.org/ja/
 ```
  ```bash
 npm install -g create-react-app
