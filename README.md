@@ -63,26 +63,20 @@ npm install @material-ui/icons
 ``` 
  
 # Usage
- 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
 ```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
+git clone https://github.com/haruto0429/skateApp
+cd skbapp
+npm start
 ```
  
-# Note
- 
-注意点などがあれば書く
  
 # Author
  
 作成情報を列挙する
  
-* 作成者
-* 所属
-* E-mail
+*<a href="https://twitter.com/home?lang=ja">Twitter</a>
+* 
+* 
  
 # License
 ライセンスを明示する
