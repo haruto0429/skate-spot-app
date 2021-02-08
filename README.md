@@ -76,13 +76,11 @@ npm start
  
 * <a href="https://twitter.com/gon_gon0429">Twitter</a>
 * <a href="https://self-diary.com/">Blog</a>
-* 
+
  
 # License
 ライセンスを明示する
  
 "hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
  
-社内向けなら社外秘であることを明示してる
- 
-"hoge" is Confidential.
+
