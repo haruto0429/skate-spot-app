@@ -9,14 +9,14 @@
 ![投稿一覧ページ](https://user-images.githubusercontent.com/71962335/107181618-8d78cf00-6a1e-11eb-94ac-c86385f42b2b.png) 
 <h2 align="center">skateApp</h2>
 
-<p align="center" >
+<div align="center" >
  
- <a align="center" href="https://firebase.google.com/?gclid=Cj0KCQiAvP6ABhCjARIsAH37rbQRZHkoZPH6J8ghnhKArQokuB7qXrufTfGOXMepRDtk1tImeypTSXcaAoYiEALw_wcB"><img src="https://user-images.githubusercontent.com/71962335/107182941-155fd880-6a21-11eb-8b3c-96a43ea148b5.png" height="90px;" /></a>
+ <a  href="https://firebase.google.com/?gclid=Cj0KCQiAvP6ABhCjARIsAH37rbQRZHkoZPH6J8ghnhKArQokuB7qXrufTfGOXMepRDtk1tImeypTSXcaAoYiEALw_wcB"><img src="https://user-images.githubusercontent.com/71962335/107182941-155fd880-6a21-11eb-8b3c-96a43ea148b5.png" height="90px;" /></a>
  
- <a align="center" href="https://ja.reactjs.org/"><img src="https://user-images.githubusercontent.com/71962335/107183195-acc52b80-6a21-11eb-8aa9-73fab1870eaa.png" height="90px;" /></a>
+ <a  href="https://ja.reactjs.org/"><img src="https://user-images.githubusercontent.com/71962335/107183195-acc52b80-6a21-11eb-8aa9-73fab1870eaa.png" height="90px;" /></a>
  
- <a align="center" href="https://material-ui.com/"><img src="https://user-images.githubusercontent.com/71962335/107183817-ce72e280-6a22-11eb-988c-fcfc8a0cf278.png" height="60px;" /></a>
- </p>
+ <a  href="https://material-ui.com/"><img src="https://user-images.githubusercontent.com/71962335/107183817-ce72e280-6a22-11eb-988c-fcfc8a0cf278.png" height="60px;" /></a>
+ </div>
  
 
 # Features
