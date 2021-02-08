@@ -10,9 +10,9 @@
 <h2 align="center">skateApp</h2>
 <p align="center">
  
- <a href="https://firebase.google.com/?gclid=Cj0KCQiAvP6ABhCjARIsAH37rbQRZHkoZPH6J8ghnhKArQokuB7qXrufTfGOXMepRDtk1tImeypTSXcaAoYiEALw_wcB"><img src="https://user-images.githubusercontent.com/71962335/107182941-155fd880-6a21-11eb-8b3c-96a43ea148b5.png" height="px;" /></a>
+ <a href="https://firebase.google.com/?gclid=Cj0KCQiAvP6ABhCjARIsAH37rbQRZHkoZPH6J8ghnhKArQokuB7qXrufTfGOXMepRDtk1tImeypTSXcaAoYiEALw_wcB"><img src="https://user-images.githubusercontent.com/71962335/107182941-155fd880-6a21-11eb-8b3c-96a43ea148b5.png" height="80px;" /></a>
  
- <a href="https://ja.reactjs.org/"><img src="https://user-images.githubusercontent.com/71962335/107183195-acc52b80-6a21-11eb-8aa9-73fab1870eaa.png" height="px;" /></a>
+ <a href="https://ja.reactjs.org/"><img src="https://user-images.githubusercontent.com/71962335/107183195-acc52b80-6a21-11eb-8aa9-73fab1870eaa.png" height="80px;" /></a>
  </p>
 
 # Features
