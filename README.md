@@ -79,8 +79,6 @@ npm start
 
  
 # License
-ライセンスを明示する
- 
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+<a href="https://github.com/haruto0429/skateApp/blob/main/LICENSE">MIT</a>
  
 
