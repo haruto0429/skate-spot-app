@@ -74,8 +74,8 @@ npm start
  
 作成情報を列挙する
  
-*<a href="https://twitter.com/gon_gon0429">Twitter</a>
-* 
+* <a href="https://twitter.com/gon_gon0429">Twitter</a>
+* <a href="https://self-diary.com/">Blog</a>
 * 
  
 # License
