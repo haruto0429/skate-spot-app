@@ -48,8 +48,11 @@ Requirementで列挙したライブラリなどのインストール方法を説
 
 ```
  ```bash
-
+npm install -g create-react-app
 ``` 
+```bash
+
+```
 ```bash
 npm install @material-ui/core
 ```
