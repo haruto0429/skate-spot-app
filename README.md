@@ -7,11 +7,13 @@
 # DEMO
 ![投稿ページ](https://user-images.githubusercontent.com/71962335/107182200-a5048780-6a1f-11eb-9891-956e39520ed1.png)
 ![投稿一覧ページ](https://user-images.githubusercontent.com/71962335/107181618-8d78cf00-6a1e-11eb-94ac-c86385f42b2b.png) 
-
- 
+<h2 align="center">skateApp</h2>
+<p align="center">
+ <a href="Firebase公式サイトURL"><img src="https://〜.png" height="45px;" /></a>
+ </p>
 # Features
  
-"hoge"のセールスポイントや差別化などを説明する
+
  
 # Requirement
  
