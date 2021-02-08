@@ -33,13 +33,13 @@
  
 # Requirement
  
-* "react": "^17.0.1"
-* "react-dom": "^17.0.1"
-* "react-router-dom": "^5.2.0"
-* "react-scripts": "4.0.1"
-* "firebase": "^8.2.1"
-* "@material-ui/core": "^4.11.2"
-* "@material-ui/icons": "^4.11.2"
+* react : "^17.0.1"
+* react-dom : "^17.0.1"
+* react-router-dom : "^5.2.0"
+* react-scripts : "4.0.1"
+* firebase : "^8.2.1"
+* @material-ui/core : "^4.11.2"
+* @material-ui/icons : "^4.11.2"
 
 # Installation
  
