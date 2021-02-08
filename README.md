@@ -44,15 +44,17 @@
 # Installation
 node.jsのインストール
  ```bash
-<a href=https://nodejs.org/ja/></a>
+https://nodejs.org/ja/
 ```
 Reactのインストール
  ```bash
 npm install -g create-react-app
 ``` 
+Firebaseのインストール
 ```bash
-
+npm install -g firebase-tools
 ```
+material-uiのインストール
 ```bash
 npm install @material-ui/core
 ```
