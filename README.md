@@ -33,11 +33,14 @@
  
 # Requirement
  
-"hoge"を動かすのに必要なライブラリなどを列挙する
- 
-* huga 3.5.2
-* hogehuga 1.0.2
- 
+* "react": "^17.0.1"
+* "react-dom": "^17.0.1"
+* "react-router-dom": "^5.2.0"
+* "react-scripts": "4.0.1"
+* "firebase": "^8.2.1"
+* "@material-ui/core": "^4.11.2"
+* "@material-ui/icons": "^4.11.2"
+
 # Installation
  
 Requirementで列挙したライブラリなどのインストール方法を説明する
