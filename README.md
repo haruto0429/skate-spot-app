@@ -42,12 +42,11 @@
 * @material-ui/icons : "^4.11.2"
 
 # Installation
- 
-Requirementで列挙したライブラリなどのインストール方法を説明する
-node.jsをインストール
+node.jsのインストール
  ```bash
 https://nodejs.org/ja/
 ```
+Reactのインストール
  ```bash
 npm install -g create-react-app
 ``` 
