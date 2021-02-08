@@ -74,7 +74,7 @@ npm start
  
 作成情報を列挙する
  
-*<a href="https://twitter.com/home?lang=ja">Twitter</a>
+*<a href="https://twitter.com/gon_gon0429">Twitter</a>
 * 
 * 
  
