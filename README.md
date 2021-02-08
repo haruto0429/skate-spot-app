@@ -20,7 +20,7 @@
 ## Usage
 ログイン用アカウント　<br>
 メールアドレス　test＠gmail.com<br>
-パスワード　　　１２３４５６
+パスワード　　　123456
 
 # Features
  
