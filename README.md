@@ -44,8 +44,8 @@
 # Installation
  
 Requirementで列挙したライブラリなどのインストール方法を説明する
+node.jsをインストール
  ```bash
- node.jsをインストール
 https://nodejs.org/ja/
 ```
  ```bash
