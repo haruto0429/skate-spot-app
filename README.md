@@ -18,8 +18,8 @@
 ### **https://skate-spot-share.herokuapp.com/**  
 
 ## Usage
-ログイン用アカウント　
-メールアドレス　test＠gmail.com
+ログイン用アカウント　<br>
+メールアドレス　test＠gmail.com<br>
 パスワード　　　１２３４５６
 
 # Features
