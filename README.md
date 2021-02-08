@@ -44,10 +44,18 @@
 # Installation
  
 Requirementで列挙したライブラリなどのインストール方法を説明する
- 
-```bash
-pip install huga_package
+ ```bash
+
 ```
+ ```bash
+
+``` 
+```bash
+npm install @material-ui/core
+```
+```bash
+npm install @material-ui/icons
+``` 
  
 # Usage
  
