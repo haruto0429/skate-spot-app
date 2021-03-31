@@ -26,8 +26,14 @@ const useStyles = makeStyles(theme=>({
       
   },
   cardContent: {
-      height: '270px',
+      height: '280px',
       
+  },
+  cardTitle: {
+    height: '115px'
+  },
+  cardExplanation: {
+    height: '100px'
   },
   favorite:{
     position: 'absolute',
@@ -93,13 +99,13 @@ const MediaCard = (props) => {
                     component='img'
                     image={props.image}/>
                 <CardContent className={classes.cardContent}>
-                    <Typography gutterBottom variant="h4" component="h2">
+                    <Typography className={classes.cardTitle} gutterBottom variant="h4" component="h2">
                           {props.name}
                     </Typography>
                     <Typography gutterBottom  component="h4">
                         〒{props.address}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography className={classes.cardExplanation} variant="body2" color="textSecondary" component="p">
                         {props.explanation}
                         
                     </Typography>

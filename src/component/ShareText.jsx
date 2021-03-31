@@ -66,7 +66,7 @@ const ShareText = () => {
             marginTop: '8%',
             [theme.breakpoints.down('sm')]:{
                 marginTop: '8%',
-                height: '20%',
+                height: '2†0%',
                 width: '250px',
             }
         },
